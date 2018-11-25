@@ -1,21 +1,3 @@
-// // toto ta hodi naspat za 3s  window.setTimeout(function() {map.setZoom(pos);},3000);
-//
-// var changeColorButton = function() {
-//     var state = false;
-//
-//     return {
-//         start: function() {
-//             state = false;
-//         },
-//         end: function() {
-//             state = true;
-//         },
-//         get: function() {
-//             return state;
-//         }
-//     }
-// }();
- 
 $(document).ready(function() {
     $('#button1stQuest').addClass("btn btn-lg btn-red");
     if(localStorage.getItem("step1") == "2"){
@@ -35,7 +17,6 @@ function loadMap() {
     var podPalackymVrchemKolejePosition = {lat: 49.232584, lng: 16.570851};
     var hlavneNadraziPosition = {lat: 49.192742, lng: 16.6096532};
 
-
     var map = new google.maps.Map(document.getElementById('map'), {
         center: loadingPosition,
         zoom: 14
@@ -54,13 +35,8 @@ function loadMap() {
             alert("Super našiel si FIT");
             $("#button1stQuest").addClass("btn btn-lg btn-green");
             localStorage.setItem("step1", "2");
-            map.setZoom(19);
-            map.setCenter(vutFIT.getPosition());
-        }
-        // otvorenie FIT skoly
-        else if((map.getZoom() == 19)){
-            // sem pojde uz do casti fitu... stranku fitu...
-            window.location.href = "/ITU/src/frontend/html/staryFIT.html";
+            window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
+
         }
     });
 
@@ -80,7 +56,7 @@ function loadMap() {
         // otvorenie FIT skoly
         else if((map.getZoom() == 19)){
             // sem pojde uz do casti fitu... stranku fitu...
-            window.location.href = "/ITU/src/frontend/html/fekt.html";
+            window.location.href = "/~xorsak02/ITU/src/frontend/html/fekt.html";
         }
     });
 
