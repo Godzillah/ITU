@@ -10,12 +10,20 @@ var druhyTerminCounter = 22;
 var tretiTerminCounter = 52;
 
 var isRegistered = false;
-
+var isAppended = true;
 
 function imitatorOfDate(){
     if(localStorage.getItem("thirdLevel") === "thirdLevelDone"){
             // ak sa splni prvy level otvori sa druhy
-            $("#thirdLevelDone").removeAttr("disabled");
+            // $("#thirdLevelDone").removeAttr("disabled");
+            if(isAppended){
+                $('#thirdLevelDone').append("<a href=\"/~xorsak02/ITU/src/frontend/html/main.html\" >\n" +
+                    "            <button  class=\"btn btn-success pulse\">\n" +
+                    "        Dalej\n" +
+                    "        </button>\n" +
+                    "        </a>");
+            }
+        isAppended = false;
     }
 
     if(seconds === 60){
