@@ -2,7 +2,7 @@ var videoID = document.getElementById("videoID");
 var lavoB = document.getElementById("lavoB"); 
 var pravoB = document.getElementById("pravoB");
 var stredB = document.getElementById("stredB");
-var source = document.getElementById("mp4") ;
+var source = document.getElementById("prehraj") ;
 
 var majstro = document.getElementById("majstro") ;
 
@@ -13,17 +13,16 @@ pravoB.innerHTML = " Cesta na zastavku";
 lavoB.innerHTML = " Cesta na FEKT/ FSI VUT ";
 stredB.innerHTML = "Chyt autobus";
 
-
 pravoB.style.visibility = 'hidden';
 lavoB.style.visibility = 'hidden';
 stredB.style.visibility = 'hidden';
-
-
 
 var lvl = 1; 
 
 
 function sputstiVideo() {
+    $('#videoID').attr("autoplay", "autoplay");
+    $('#gameOver').empty();
     lvl = 1;
     // odbocim dolava na FEKT alebo v pravo na FIT
     pravoB.innerHTML = " Cesta na zastavku";
@@ -89,11 +88,12 @@ function sputstiVideo() {
             videoID.load(); 
             videoID.play();
             stredB.style.visibility = 'visible';
+            $('#stredB').addClass("animated hinge mb-4");
        }
         else if(lvl == 41 && (!stiholBus)){
             //wasted
             stredB.style.visibility = 'hidden';
-            
+            $('#stredB').removeClass("animated hinge mb-4");
             lvl = 31;
             source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cAcB.mp4");
             videoID.load(); 
@@ -102,7 +102,7 @@ function sputstiVideo() {
         }
         else if(lvl == 41 && stiholBus){
             stredB.style.visibility = 'hidden';
-            //alert("hra pokracuje");
+            $('#stredB').removeClass("animated hinge mb-4");
             lvl = 51;
             source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cBAc.mp4");
             videoID.load(); 
@@ -126,8 +126,6 @@ function sputstiVideo() {
             videoID.play()
         }
         else if(lvl == 712 ){
-            
-            
             lvl = 812;
             pravoB.style.visibility = 'visible';
             lavoB.style.visibility = 'visible';
@@ -138,6 +136,9 @@ function sputstiVideo() {
             videoID.load(); 
             videoID.play()
         }
+       else if (lvl == 913){
+           window.location.href = "/~xorsak02/ITU/src/frontend/html/main.html";
+       }
     }
 
 
@@ -146,7 +147,6 @@ function dolava() {
     lavoB.style.visibility = 'hidden';
     stredB.style.visibility = 'hidden';
 
-  // alert("lavo");
     //ides smer FEKT
     if(lvl == 1){
         lvl = 22;
@@ -155,18 +155,15 @@ function dolava() {
         videoID.play(); 
     }
     else if(lvl == 812 ){
-            
-         //wasted 
-        
+
         lvl = 912;
         source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/AAAAB.mp4");
-        videoID.load(); 
+        videoID.load();
         videoID.play();
-        alert("Wasted");
+        $('#gameOver').append("<div class=\"alert alert-danger animated shake mb-2\"><p style=\"font-size: 50px;\">Prehral si!</p></div> ");
     }
     else if(lvl == 62 ){
-            
-            
+
         lvl = 41;
         stiholBus = true; 
         source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cBA.mp4");
@@ -181,7 +178,6 @@ function doprava() {
     pravoB.style.visibility = 'hidden';
     lavoB.style.visibility = 'hidden';
     stredB.style.visibility = 'hidden';
-    //alert("doprava called"); 
     if(lvl == 1){
         lvl = 21;
         source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cA.mp4");
@@ -189,38 +185,32 @@ function doprava() {
         videoID.play(); 
     }
     else if(lvl == 812 ){
-            
-          //vyhral  
         lvl = 913;
         source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cAA.mp4");
         videoID.load(); 
         videoID.play();
-        vyhral = true ; 
-        alert("vyhral");
+        vyhral = true ;
+        $('#gameOver').append("<div class=\"alert alert-success animated shake mb-2\"><p style=\"font-size: 50px;\">Vyhral si!</p></div> ");
+        localStorage.setItem("secondLevel", "secondLevelDone");
     }
     else if(lvl == 62 ){
-            
-           
         lvl = 722;
         source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cBB.mp4");
         videoID.load(); 
         videoID.play();
-        alert("wasted");
+        $('#gameOver').append("<div class=\"alert alert-danger animated shake mb-2\"><p style=\"font-size: 50px;\">Prehral si!</p></div> ");
         
     }
 }
 function dostredu() {
-    alert(lvl);
      if(lvl == 41){
         stiholBus = true ;
-         stredB.style.visibility = 'hidden';
+        stredB.style.visibility = 'hidden';
         lvl = 51;
         source.setAttribute("src", "/~xorsak02/ITU/src/frontend/videos/cBAc.mp4");
         videoID.load(); 
         videoID.play(); 
      }
-     
-    
 }
 
 

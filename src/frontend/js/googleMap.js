@@ -8,20 +8,18 @@ $(document).ready(function() {
         // ak sa splni prvy level otvori sa druhy
         $("#button2ndQuest").addClass("btn btn-lg btn-green");
         $("#button2ndQuest").removeAttr("disabled");
-        $("#button2ndQuest").addClass("btn btn-lg btn-red");
+    }
+    if(localStorage.getItem("secondLevel") == "secondLevelDone"){
+        console.log("Prejdeny 2.level");
+        // ak sa splni druhy level otvori sa druhy
+        $("#button3rdQuest").addClass("btn btn-lg btn-green");
+        $("#button3rdQuest").removeAttr("disabled");
     }
     if(localStorage.getItem("thirdLevel") == "thirdLevelDone"){
         console.log("Prejdeny 3.level");
         // ak sa splni prvy level otvori sa druhy
-        $("#button2ndQuest").addClass("btn btn-lg btn-green");
-        $("#button2ndQuest").removeAttr("disabled");
-        $("#button3rdQuest").removeClass("btn btn-lg btn-red");
-        $("#button3rdQuest").addClass("btn btn-lg btn-green");
-    }
-    else{
-        console.log("Else level");
-        $("#button2ndQuest").addClass("btn btn-lg btn-red");
-        $("#button3rdQuest").addClass("btn btn-lg btn-red");
+        $("#4").addClass("btn btn-lg btn-green");
+        $("#4").removeAttr("disabled");
     }
 });
 

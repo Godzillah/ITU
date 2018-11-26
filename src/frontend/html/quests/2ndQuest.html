@@ -2,30 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>2.level</title>
+    <title>Documeant</title>
     <link rel="stylesheet" type="text/css" href="/~xorsak02/ITU/src/frontend/css/video.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/~xorsak02/ITU/src/frontend/MDB/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/esm/popper.min.js"></script>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/mdb.min.js"></script>
 </head>
+
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+        background-image: url("/~xorsak02/ITU/src/frontend/img/background2ndQuest.jpg");
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    #backToMenuBtn{
+        font-size :10px;
+    }
+</style>
+
 <body>
-<div id="mv" class="video-container">
-    <video id="videoID"  controls="false" autoplay="autoplay" >
-        <source id="mp4" src="c.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    <div class="hero-caption" >
-
-        <div id="majstro" class="hero-caption-inner" align="center">
-
-            <div id="lavoD" align="left" ><button id="lavoB" onclick="dolava()">Dolava Hovorim</button></div>
-            <div id="pravoD" align="right"><button id="pravoB" onclick="doprava()">Doprava</button></div>
-            <div id="stredD" align="center"><button onclick="dostredu()" id="stredB">stred</button></div>
-
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12" align="center">
+                <div class="row justify-content-center">
+                    <a href="/~xorsak02/ITU/src/frontend/html/main.html"><button id="backToMenuBtn" class="btn btn-info">Naspat do menu</button></a>
+                    <p class="h1" style="color:#225c82;font-size: 50px;">Cesta do fitu</p>
+                </div>
+                <div id="mv">
+                    <video id="videoID"  controls="false" width="1280px">
+                        <source src="/~xorsak02/ITU/src/frontend/videos/c.mp4" id="prehraj" type="video/mp4"></video>
+                    <div class="Vnutro" >
+                        <div id="majstro" class="vnutro-vkladanie" align="center">
+                            <div id="lavoD" >
+                                <button id="lavoB" class="btn btn-info" onclick="dolava()" style="position: absolute; left: 0;">Dolava Hovorim</button>
+                                <button id="pravoB" class="btn btn-info" onclick="doprava()" style="position: absolute; right: 0;">Doprava</button>
+                            </div>
+                            <div id="pravoD" align="right">
+                            </div>
+                            <div id="stredD" align="center">
+                                <button onclick="dostredu()" class="btn btn-info" id="stredB">stred</button>
+                                <div id="gameOver">
+                                    <!--<div class="alert alert-danger animated shake mb-2"><p style="font-size: 50px;">Game Over</p></div>                           </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="sputstiVideo()" type="button" >hraj hru</button>
+                </div>
+            </div>
         </div>
-
     </div>
-</div>
-
-
-<button onclick="sputstiVideo()" type="button">hraj hru</button>
 </body>
-`
-
-<script src="/~xorsak02/ITU/src/frontend/js/quests/2ndQuest.js"></script>
+    <script src="/~xorsak02/ITU/src/frontend/js/quests/2ndQuest.js"></script>
 </html>
