@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="/~xorsak02/ITU/src/frontend/MDB/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/popper.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/esm/popper.min.js"></script>
@@ -24,67 +23,126 @@
     <h1 class="text-center text-white"> Spoznaj FIT </h1>
 </header>
 
-<!-- 1. QUEST  -->
-<!--<div id="1stQuest"></div>-->
-<button id="button1stQuest" type="button" data-toggle="modal" data-target="#exampleModalPopovers">1.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">2.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">3.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">4.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">5.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">6.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">7.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">8.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">9.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">10.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">11.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">12.Ukol</button>
-<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">13.Ukol</button>
-<div id="exampleModalPopovers" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalPopoversLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalPopoversLabel">1.ukol</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">X</span>
-                </button>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 1. QUEST  -->
+            <!--<div id="1stQuest"></div>-->
+            <button id="button1stQuest" type="button" data-toggle="modal" data-target="#modal1stQuest">1.Ukol</button>
+            <button id="button2ndQuest" type="button" disabled data-toggle="modal" data-target="#modal2ndQuest">2.Ukol</button>
+            <button id="button3rdQuest" type="button"  data-toggle="modal" data-target="#modal3rdQuest">3.Ukol</button>
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">4.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">5.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">6.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">7.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">8.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">9.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">10.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">11.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">12.Ukol</button>-->
+            <!--<button id="button2ndQuest" type="button" class="btn btn-lg btn-red" data-toggle="modal" data-target="#exampleModalPopovers">13.Ukol</button>-->
+
+            <!-- 1.LEVEL MODAL -->
+            <div id="modal1stQuest" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="label1stQuest">1.ukol</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">X</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Prvy ukol bude jednoduchy...</h5>
+                            <p>V mape budes musiet prejst do FITU.</p>
+                            <p>1.Najdi FIT</p>
+                            <p>2.Vstup na FIT</p>
+                            <hr>
+                            <h5>Rady</h5>
+                            <p>
+                                <a class="tooltip-1Quest" title="" data-original-title="Všetko hladaj v mape" data-toggle="tooltip">Vyuzi mapu.</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-blue" data-dismiss="modal">Naspat</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Podme na to!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <h5>Prvy ukol bude jednoduchy...</h5>
-                <p>V mape budes musiet prejst do FITU.</p>
-                <p>1.Najdi FIT</p>
-                <p>2.Vstup na FIT</p>
-                <hr>
-                <h5>Rady</h5>
-                <p>
-                    <a class="tooltip-1Quest" title="" data-original-title="Všetko hladaj v mape" data-toggle="tooltip">Skus tento tip</a> a
-                    <a class="tooltip-1Quest" title="" data-original-title="Všetko hladaj v mape" data-toggle="tooltip">tento tiez</a></p>
+            <!-- 2.LEVEL MODAL -->
+            <div id="modal2ndQuest" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="label2ndtQuest">2.ukol</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">X</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Druhy ukol bude jednoduchy...</h5>
+                            <p>V mape budes musiet prejst do FITU.</p>
+                            <p>1.Najdi FIT</p>
+                            <p>2.Vstup na FIT</p>
+                            <hr>
+                            <h5>Rady</h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-blue" data-dismiss="modal">Naspat</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Podme na to!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-blue" data-dismiss="modal">Naspat</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Podme na to!</button>
+        </div>
+        <!-- 3.LEVEL MODAL -->
+        <div id="modal3rdQuest" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="label3rdQuest">3.ukol</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">X</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Treti ukol preveri tvoje schopnosti v klikani...</h5>
+                        <p>Ak si este nepocul o click war tak je to v podstate prihlasovanie sa na cvicenie/projekt/polsemestralku.
+                            Kde mas niekedy menej ako 1s na to aby si si zvolil ten tvoj vysnivany termin. </p>
+                        <p>1.Stihni sa prihlasit</p>
+                        <hr>
+                        <h5>Rady</h5>
+                        <p> Bud rychly.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-blue" data-dismiss="modal">Naspat</button>
+                        <a href="/~xorsak02/ITU/src/frontend/html/quests/3rdQuest.html"><button type="button" class="btn btn-primary">
+                            Podme na to!
+                        </button></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="progress">
-    <div class="progress-bar orange darken-2" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<body class="blue-gradient color-block mx-auto z-depth-1">
-    <div id="map" class = "block-example border border-white" style="width:100%; height:850px">
-        <div class="row justify-content-center">
-            <h1 class="text-white">Sem bude mapa</h1>
-            <!-- API SCRIPT TO LOAD A MAP ....-->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2adixnOMm1xqpKXtVj1Nu9iDrZcpHrz0&callback=loadMap"
-                    async defer></script>
+        <div id="successLevel" class="row justify-content-center">
+            <!-- DYNAMICALLY IN JQUERRY APPENDING -->
         </div>
     </div>
 
-    <!--INCLUDES -->
-    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/mdb.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!--SCRIPT FOR LOADING MAP -->
-    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/js/googleMap.js"></script>
-</body>
+
+    <body class="blue-gradient color-block mx-auto z-depth-1">
+        <div id="map" class = "block-example border border-white" style="width:100%; height:850px">
+            <div class="row justify-content-center">
+                <!-- API SCRIPT TO LOAD A MAP ....-->
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2adixnOMm1xqpKXtVj1Nu9iDrZcpHrz0&callback=loadMap"
+                        async defer></script>
+            </div>
+        </div>
+
+        <!--INCLUDES -->
+        <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/mdb.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--SCRIPT FOR LOADING MAP -->
+        <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/js/googleMap.js"></script>
+    </body>
 </html>

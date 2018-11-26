@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/~xorsak02/ITU/src/frontend/MDB/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/esm/popper.min.js"></script>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/MDB/js/mdb.min.js"></script>
+
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-image: url("/~xorsak02/ITU/src/frontend/img/hourglass-sand-black-glass.jpg");
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        .btn.btn-info{
+            font-size :10px;
+        }
+    </style>
+
+</head>
+
+<!-- HEADER-->
+<div id="header"></div>
+
+<body>
+    <br>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12" align="center">
+                <div class="row justify-content-center">
+                    <a href="/~xorsak02/ITU/src/frontend/html/main.html"><button class="btn btn-info">Naspat do menu</button></a>
+                    <h1 class="text-center" style="color:#a8a8a8;">Registracia cviceni</h1>
+                </div>
+                <div class="text-center text-white" id="todaysDate"></div>
+                <div class="text-center text-white" id="timeToRegister"></div>
+                <br>
+                <br>
+                <table class="text-center" align="center" border="1" bordercolor="#999999" cellpadding="2">
+                    <tbody>
+                    <tr bgcolor="#ADD8E7"><th>#</th><th>Nazev</th><th>Prihlasovanie</th><th>Prihl</th><th>Max</th></tr>
+                    <tr valign="top">
+                        <th class="text-white" align="right">1.</th>
+                        <td class="text-white"><b>Po 11:00--12:50, Grigl, BIB 11</b></td>
+                        <td class="text-white"><a id="registracia1" class="registracia"></a></td>
+                        <td id="prvyTermin" class="text-white">0</td>
+                        <td class="text-white">52</td>
+                    </tr>
+                    <tr class="text-white" valign="top">
+                        <th align="right">2.</th>
+                        <td class="text-white"><b>Ct 07:00--08:50, Tendil, BIA 12</b></td>
+                        <td class="text-white"><a id="registracia2" class="registracia" onclick="reg2()"></a></td>
+                        <td id="druhyTermin" class="text-white">0</td>
+                        <td class="text-white">52</td>
+                    </tr>
+                    <tr valign="top">
+                        <th class="text-white" align="right">3.</th>
+                        <td class="text-white"><b>Ct 09:00--10:50, Limal, BIB 13</b></td>
+                        <td class="text-white"><a id="registracia3" class="registracia"></a></td>
+                        <td id="tretiTermin" class="text-white">0</td>
+                        <td class="text-white id= class="text-white">52</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <br>
+                <a href="/~xorsak02/ITU/src/frontend/html/quests/3rdQuest.html"><button class="btn btn-danger">Restart</button></a>
+                <button id="thirdLevelDone" class="btn btn-success" disabled ><a href="/~xorsak02/ITU/src/frontend/html/main.html">Dalej</a></button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/~xorsak02/ITU/src/frontend/js/quests/3Quest.js"></script>
+
+</body>
+</html>

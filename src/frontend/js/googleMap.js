@@ -1,11 +1,27 @@
 $(document).ready(function() {
-    $('#button1stQuest').addClass("btn btn-lg btn-red");
-    if(localStorage.getItem("step1") == "2"){
-        $("#button1stQuest").addClass("btn btn-lg btn-green");
-        console.log("soommm tu");
-    } else{
-        $("#button1stQuest").addClass("btn btn-lg btn-red");
-        console.log("soommm tu124112");
+
+    // na začiatku bude 1.quest dostupny (zeleny)
+    $("#button1stQuest").addClass("btn btn-lg btn-green");
+
+    if(localStorage.getItem("firstLevel") == "firstLevelDone"){
+        console.log("Prejdeny 1.level");
+        // ak sa splni prvy level otvori sa druhy
+        $("#button2ndQuest").addClass("btn btn-lg btn-green");
+        $("#button2ndQuest").removeAttr("disabled");
+        $("#button2ndQuest").addClass("btn btn-lg btn-red");
+    }
+    if(localStorage.getItem("thirdLevel") == "thirdLevelDone"){
+        console.log("Prejdeny 3.level");
+        // ak sa splni prvy level otvori sa druhy
+        $("#button2ndQuest").addClass("btn btn-lg btn-green");
+        $("#button2ndQuest").removeAttr("disabled");
+        $("#button3rdQuest").removeClass("btn btn-lg btn-red");
+        $("#button3rdQuest").addClass("btn btn-lg btn-green");
+    }
+    else{
+        console.log("Else level");
+        $("#button2ndQuest").addClass("btn btn-lg btn-red");
+        $("#button3rdQuest").addClass("btn btn-lg btn-red");
     }
 });
 
@@ -31,13 +47,28 @@ function loadMap() {
 
     vutFIT.addListener('click', function () {
         // priblizenie na dany objekt
-        if((map.getZoom() != 19)){
-            alert("Super našiel si FIT");
-            $("#button1stQuest").addClass("btn btn-lg btn-green");
-            localStorage.setItem("step1", "2");
-            window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
-
+        if(!(localStorage.getItem("firstLevel") == "firstLevelDone")){
+            $("#successLevel").append("<div class=\"alert alert-success\" role=\"alert\">\n" +
+                "                Hura nasiel si FIT!\n" +
+                "            </div>");
+            window.setTimeout(function(){
+                if((map.getZoom() != 19)){
+                    $("#button1stQuest").addClass("btn btn-lg btn-green");
+                    localStorage.setItem("firstLevel", "firstLevelDone");
+                    window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
+                }
+            }, 2000);
         }
+        else{
+            if((map.getZoom() != 19)){
+                $("#button1stQuest").addClass("btn btn-lg btn-green");
+                localStorage.setItem("firstLevel", "firstLevelDone");
+                window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
+            }
+        }
+
+
+
     });
 
     var vutFEKT = new google.maps.Marker({
@@ -60,31 +91,23 @@ function loadMap() {
         }
     });
 
-    map.addListener('center_changed', function () {
-        // 3 seconds after the center of the map has changed, pan back to the
-        // marker.
-        window.setTimeout(function () {
-            map.panTo(loadingPosition.getPosition());
-        }, 3000);
-    });
-
-    var purkynoveKoleje = new google.maps.Marker({
-        map: map,
-        position: purkynoveKolejePosition,
-        title: 'VUT FIT SCHOOL!'
-    });
-
-    var palackeKoleje = new google.maps.Marker({
-        map: map,
-        position: podPalackymVrchemKolejePosition,
-        title: 'Palačáky!'
-    });
-
-    var hlavneNadrazi = new google.maps.Marker({
-        map: map,
-        position: hlavneNadraziPosition,
-        title: 'VUT FIT SCHOOL!'
-    });
+    // var purkynoveKoleje = new google.maps.Marker({
+    //     map: map,
+    //     position: purkynoveKolejePosition,
+    //     title: 'Purkynove koleje!'
+    // });
+    //
+    // var palackeKoleje = new google.maps.Marker({
+    //     map: map,
+    //     position: podPalackymVrchemKolejePosition,
+    //     title: 'Palačáky!'
+    // });
+    //
+    // var hlavneNadrazi = new google.maps.Marker({
+    //     map: map,
+    //     position: hlavneNadraziPosition,
+    //     title: 'VUT FIT SCHOOL!'
+    // });
 }
 
 
