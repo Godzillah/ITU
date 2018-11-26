@@ -27,7 +27,7 @@ function loadMap() {
     var loadingPosition = {lat: 49.2129874, lng: 16.593002};
     var vutFitPostion = {lat: 49.2266153, lng: 16.59666525};
     var vutFektPosition = {lat: 49.226813, lng: 16.575148};
-    var purkynoveKolejePosition = {lat: 49.2231725, lng: 16.58695};
+    var purkynoveKolejePosition = {lat: 49.224132, lng: 16.58243};
     var podPalackymVrchemKolejePosition = {lat: 49.232584, lng: 16.570851};
     var hlavneNadraziPosition = {lat: 49.192742, lng: 16.6096532};
 
@@ -39,7 +39,7 @@ function loadMap() {
     var vutFIT = new google.maps.Marker({
         map: map,
         position: vutFitPostion,
-        title: 'Click to zoom',
+        title: 'FIT',
         icon: 'http://www.stud.fit.vutbr.cz/~xorsak02/images/fitLogoSmall.png'
     });
 
@@ -89,11 +89,12 @@ function loadMap() {
         }
     });
 
-    // var purkynoveKoleje = new google.maps.Marker({
-    //     map: map,
-    //     position: purkynoveKolejePosition,
-    //     title: 'Purkynove koleje!'
-    // });
+    var purkynoveKoleje = new google.maps.Marker({
+        map: map,
+        position: purkynoveKolejePosition,
+        title: 'Purkynove koleje!',
+        icon: 'http://www.stud.fit.vutbr.cz/~xorsak02/ITU/src/frontend/img/homeIcon.jpg'
+    });
     //
     // var palackeKoleje = new google.maps.Marker({
     //     map: map,
