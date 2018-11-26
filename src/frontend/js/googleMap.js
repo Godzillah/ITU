@@ -64,9 +64,6 @@ function loadMap() {
                 window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
             }
         }
-
-
-
     });
 
     var vutFEKT = new google.maps.Marker({
@@ -74,19 +71,6 @@ function loadMap() {
         position: vutFektPosition,
         title: 'VUT FEKT SCHOOL!',
         icon: 'http://www.stud.fit.vutbr.cz/~xorsak02/images/fektLogoSmall.png'
-    });
-
-    vutFEKT.addListener('click', function () {
-        // priblizenie na dany objekt
-        if((map.getZoom() != 19)) {
-            map.setZoom(19);
-            map.setCenter(vutFEKT.getPosition());
-        }
-        // otvorenie FIT skoly
-        else if((map.getZoom() == 19)){
-            // sem pojde uz do casti fitu... stranku fitu...
-            window.location.href = "/~xorsak02/ITU/src/frontend/html/fekt.html";
-        }
     });
 
     var purkynoveKoleje = new google.maps.Marker({
