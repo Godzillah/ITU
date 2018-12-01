@@ -1,8 +1,6 @@
 var hours = 19;
 var minutes = 59;
 var seconds = 50;
-var secondsToRegister = 10;
-var stringToRegister = "";
 var str = "";
 
 var prvyTerminCounter = 52;
@@ -41,14 +39,6 @@ function imitatorOfDate(){
         seconds = "0" + seconds;
     }
 
-    if(!secondsToRegister == 0){
-        console.log();
-        stringToRegister = "O " + secondsToRegister + "s" + " zacina zaregistrovanie";
-        secondsToRegister--;
-    }
-    else{
-        stringToRegister = "";
-    }
     str = hours + ":" + minutes + ":" + seconds;
     // ak bude mensi ako 19:59:59 tak sa bude ukazovat registrovat
     if(hours < 20 && minutes < 60 && seconds < 60){
@@ -119,7 +109,6 @@ function imitatorOfDate(){
     }
 
     document.getElementById("todaysDate").innerHTML = str;
-    document.getElementById("timeToRegister").innerHTML = stringToRegister;
     console.log(str);
     seconds++;
 }
