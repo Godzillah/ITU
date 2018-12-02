@@ -53,7 +53,7 @@ function loadMap() {
                 if((map.getZoom() != 19)){
                     $("#button1stQuest").addClass("btn btn-lg btn-green");
                     localStorage.setItem("firstLevel", "firstLevelDone");
-                    window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
+                    location.replace("http://www.stud.fit.vutbr.cz/~xorsak02/ITU/src/frontend/html/staryFIT.html");
                 }
             }, 2000);
         }
@@ -61,7 +61,7 @@ function loadMap() {
             if((map.getZoom() != 19)){
                 $("#button1stQuest").addClass("btn btn-lg btn-green");
                 localStorage.setItem("firstLevel", "firstLevelDone");
-                window.location.href = "/~xorsak02/ITU/src/frontend/html/staryFIT.html";
+                location.replace("http://www.stud.fit.vutbr.cz/~xorsak02/ITU/src/frontend/html/staryFIT.html");
             }
         }
     });
@@ -79,18 +79,7 @@ function loadMap() {
         title: 'Purkynove koleje!',
         icon: 'http://www.stud.fit.vutbr.cz/~xorsak02/ITU/src/frontend/img/homeIcon.jpg'
     });
-    //
-    // var palackeKoleje = new google.maps.Marker({
-    //     map: map,
-    //     position: podPalackymVrchemKolejePosition,
-    //     title: 'Palačáky!'
-    // });
-    //
-    // var hlavneNadrazi = new google.maps.Marker({
-    //     map: map,
-    //     position: hlavneNadraziPosition,
-    //     title: 'VUT FIT SCHOOL!'
-    // });
+
 }
 
 

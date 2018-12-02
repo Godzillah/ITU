@@ -12,10 +12,8 @@ var isAppended = true;
 
 function imitatorOfDate(){
     if(localStorage.getItem("thirdLevel") === "thirdLevelDone"){
-            // ak sa splni prvy level otvori sa druhy
-            // $("#thirdLevelDone").removeAttr("disabled");
             if(isAppended){
-                $('#thirdLevelDone').append("<a href=\"/~xorsak02/ITU/src/frontend/html/main.html\" >\n" +
+                $('#thirdLevelDone').append("<a href=\"http://www.stud.fit.vutbr.cz/~xorsak02/ITU/src/frontend/html/main.html\" >\n" +
                     "            <button  class=\"btn btn-success pulse\">\n" +
                     "        Dalej\n" +
                     "        </button>\n" +
